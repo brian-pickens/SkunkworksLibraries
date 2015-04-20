@@ -54,11 +54,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{346f2bc4-ff43-41e6-8ed7-e3069053fb95}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SkunkworksLibraries\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{03fee838-092d-4d17-ba46-8e31f1e1d338}</Project>
       <Name>Core</Name>
     </ProjectReference>
