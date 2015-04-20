@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\SkunkworksLibraries\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{03fee838-092d-4d17-ba46-8e31f1e1d338}</Project>
       <Name>Core</Name>
     </ProjectReference>
