@@ -4,6 +4,6 @@ namespace DataAccess
 {
     public interface IRepositoryFactory
     {
-        IGenericRepository<T> Get<T>() where T : Type;
+        T Get<T, TE>() where TE : Type where T : IGenericRepository<TE>;
     }
 }

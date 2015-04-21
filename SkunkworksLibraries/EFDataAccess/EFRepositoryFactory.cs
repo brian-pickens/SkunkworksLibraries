@@ -14,9 +14,11 @@ namespace EFDataAccess
             _context = context;
         }
 
-        public IGenericRepository<T> Get<T>() where T : Type
+        public T Get<T, TE>() where TE : Type where T:IGenericRepository<TE>
         {
-            return new EFGenericRepository<T>(_context.Set<T>());
+            var x = new EFGenericRepository<TE>(_context.Set<TE>());
+            return (T) Convert.ChangeType(x, typeof(T));
         }
+
     }
 }
