@@ -4,19 +4,19 @@ using DataAccess;
 
 namespace EFDataAccess
 {
-    class EFUnitOfWork : IDisposable
+    public class EFGenericRepositoryContext : IGenericRepositoryContext
     {
 
         private readonly DbContext _context;
 
-        public EFUnitOfWork(DbContext context)
+        public EFGenericRepositoryContext(DbContext context)
         {
             _context = context;
         }
 
-        public T Get<T, TE>() where TE : Type where T:EFGenericRepository<TE>
+        public T Get<T, TE>() where TE : class where T:EFGenericRepository<TE>
         {
-            var x = new EFGenericRepository<TE>(_context.Set<TE>());
+            var x = Activator.CreateInstance(typeof(T), _context.Set<TE>());
             return (T) Convert.ChangeType(x, typeof(T));
         }
 

@@ -7,7 +7,7 @@ using DataAccess;
 
 namespace EFDataAccess
 {
-    public class EFGenericRepository<T> : IGenericRepository<T> where T : class
+    public abstract class EFGenericRepository<T> : IGenericRepository<T> where T : class
     {
 
         private readonly DbSet<T> _dbSet;
