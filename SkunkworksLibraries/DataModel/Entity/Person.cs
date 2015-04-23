@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataModel.Entity
 {
-    public class Person
+    public class Person : AbstractEntity
     {
 
         [Required]
@@ -16,6 +17,9 @@ namespace DataModel.Entity
         [Required]
         [StringLength(1)]
         public string MiddleInitial { get; set; }
+
+        [ForeignKey("Id")]
+        public virtual Dog Dog { get; set; }
 
     }
 }
