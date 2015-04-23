@@ -49,12 +49,12 @@ namespace UnitTest
     }
 
     [SetUpFixture]
-    public class DataInitalizer
+    public class SetupFixture
     {
         [SetUp]
         void RunBeforeAnyTests()
         {
-            Database.SetInitializer(null);
+
             Database.SetInitializer(new DataInitializer(new JoesPetSuppliesDataContext()));
         }
     }
